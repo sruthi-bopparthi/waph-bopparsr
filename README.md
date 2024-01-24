@@ -29,7 +29,7 @@ Link to Lab1 code : https://github.com/SruthiAelay/waph-bopparsr/tree/main/labs/
 
 Wireshark is a network protocol analyzer that allows us to capture and inspect data traveling back and forth between a client and a server. The focus was on gaining familiarity with Wireshark for HTTP traffic analysis. The first step was to Capturing HTTP Traffic. Opened Wireshark and selected the network interface. Second step was to Analyzing HTTP Components. Applied a http filter to specifically cread HTTP traffic. Examined captured packets to understand the components of HTTP, including headers, methods, and status codes. Focused on HTTP Request and Response messages.
 
-![Figure 2: Example.com Request ](/Images/Example_Request1.png)
+![Figure 2: Example.com Request ](/lab1/Images/Example_Request1.png)
 
 ![Figure 3: Example.com Response ](/Images/Example_Response1.png)
 
