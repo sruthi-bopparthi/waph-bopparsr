@@ -8,7 +8,7 @@
 ### Email: bopparsr@mail.uc.edu
 
 
-<img src="/labs/lab1/Images/Sruthi_Pic.jpeg"  width="300" height="300"><p><h3> Figure 1: Sruthi Headshot</h3></p>
+<img src="Images/Sruthi_Pic.jpeg"  width="300" height="300"><p><h3> Figure 1: Sruthi Headshot</h3></p>
 
 ## Repository Information
 ### Repository's URL: https://github.com/SruthiAelay/waph-bopparsr.git
@@ -29,24 +29,24 @@ Link to Lab1 code : https://github.com/SruthiAelay/waph-bopparsr/tree/main/labs/
 
 Wireshark is a network protocol analyzer that allows us to capture and inspect data traveling back and forth between a client and a server. The focus was on gaining familiarity with Wireshark for HTTP traffic analysis. The first step was to Capturing HTTP Traffic. Opened Wireshark and selected the network interface. Second step was to Analyzing HTTP Components. Applied a http filter to specifically cread HTTP traffic. Examined captured packets to understand the components of HTTP, including headers, methods, and status codes. Focused on HTTP Request and Response messages.
 
-![Figure 2: Example.com Request ](/labs/lab1/Images/Example_Request1.png)
+![Figure 2: Example.com Request ](Images/Example_Request1.png)
 
-![Figure 3: Example.com Response ](/labs/lab1/Images/Example_Response1.png)
+![Figure 3: Example.com Response ](Images/Example_Response1.png)
 
-![Figure 4: Example.com HTTP Stream ](/labs/lab1/Images/Example_HTTPStream1.png)
+![Figure 4: Example.com HTTP Stream ](Images/Example_HTTPStream1.png)
 
 ### Task 2 - Understanding HTTP using telnet and Wireshark
 
 The telnet program was utilized to send a minimal HTTP Request, and Wireshark was employed to examine the resulting HTTP messages. Firstly, Opened a command prompt and initiated a telnet connection to the HTTP server.
 Manually crafted a minimal HTTP Request by specifying the method, resource, and HTTP version establishing a connection to the target server on the port 80.Then sent the manually crafted HTTP Request to the server using telnet. Later, observed the server's response to the HTTP Request. By Opening Wireshark and selected the network interface for capturing. Applied http filter to specifically capture HTTP traffic.The examined captured packets to identify the telnet-induced HTTP traffic to observe HTTP request and response.
 
-![Figure 5: Telnet Request in Terminal](/labs/lab1/Images/TelnetRequest1.png)
+![Figure 5: Telnet Request in Terminal](Images/TelnetRequest1.png)
 
-![Figure 6: Telnet Response in Terminal](/labs/lab1/Images/TelnetResponse1.png)
+![Figure 6: Telnet Response in Terminal](Images/TelnetResponse1.png)
 
-![Figure 7: Telnet Request in Wireshark](/labs/lab1/Images/TelnetWiresharkRequest1.png)
+![Figure 7: Telnet Request in Wireshark](Images/TelnetWiresharkRequest1.png)
 
-![Figure 8: Telnet Response in Wireshark](/labs/lab1/Images/TelnetWiresharkResponse1.png)
+![Figure 8: Telnet Response in Wireshark](Images/TelnetWiresharkResponse1.png)
 
 ## Part II - Basic Web Application Programming
 ### Task 1 - CGI Web applications in C
@@ -58,13 +58,13 @@ Open a web browser and navigate to the appropriate URL.
 Example URL: http://localhost/cgi-bin/helloworld.cgi
 The web server will execute the CGI program, and the browser will display the generated output.
 
-![Figure 9: Helloworld CGI Program Input](/labs/lab1/Images/HelloworldCgiInput.png)
+![Figure 9: Helloworld CGI Program Input](Images/HelloworldCgiInput.png)
 
-![Figure 10: Helloworld CGI Program Output](/labs/lab1/Images/HelloworldCgiOutput.png)
+![Figure 10: Helloworld CGI Program Output](Images/HelloWorldCgiOutput.png)
 
 2) Summarize and demonstrate with a screenshot that you can write another C CGI program and deploy it with a simple HTML template provided on https://www.w3schools.com/html/Links to an external site. with proper title, heading, and paragraph, i.e., the course and your information should be there.
 
-![Figure 11: CGI Program Output](/labs/lab1/Images/IndexOutput.png)
+![Figure 11: CGI Program Output](Images/IndexOutput.png)
 
 Index.c file
 #include <stdio.h>
@@ -85,7 +85,7 @@ int main(void)
 
 1) I developed a simple helloworld.php script in PHP to demonstrate dynamic content generation. The script included the standard PHP opening and closing tags (<?php and ?>) and a single echo statement to output the "Hello, World!" message. After saving the PHP file, I moved it to a directory accessible by the web server. To test the script, I navigated to the appropriate URL in a web browser (e.g., http://localhost/helloworld.php). The server executed the PHP script, and the browser displayed the "Hello, World!" message. This process validated the successful development and deployment of a basic PHP script for dynamic content generation on the web server.
 
-![Figure 12: HelloWorld Php Program Output](/labs/lab1/Images/HelloWorldPhp.png)
+![Figure 12: HelloWorld Php Program Output](Images/HelloWorldPhp.png)
 
 2) Demonstrate that you developed and deployed an echo Web application in PHP, e.g., echo.php
 
@@ -95,20 +95,20 @@ I developed and deployed an echo.php web application in PHP, which involves crea
 ?>
 Regarding security risks, this simple web application has a potential security issue known as Cross-Site Scripting (XSS). If user input is not properly sanitized or validated, an attacker could inject malicious scripts into the application, compromising the security of users. To mitigate this risk, input validation and sanitation measures should be implemented, such as using functions like htmlspecialchars to ensure that user input is treated as plain text and not interpreted as code by the browser.
 
-![Figure 13: Echo Php Program Output](/labs/lab1/Images/EchoPhp.png)
+![Figure 13: Echo Php Program Output](Images/EchoPhp.png)
 
 ### Task 3 - Understanding HTTP GET and POST requests.
 1) I used Wireshark to examine the HTTP GET Request and Response for the echo.php page with my name in the data. First, I initiated the HTTP GET Request by accessing the URL "http://localhost/echo.php?data=Hello%20everyone!%20From%20Sruthi%20Bopparthi" in a web browser. Meanwhile, Wireshark was capturing network traffic. In Wireshark, I applied a filter for HTTP traffic to focus on the relevant packets.
 
-![Figure 14: Echo Php Request in Wireshark](/labs/lab1/Images/EchoPhpRequest.png)
+![Figure 14: Echo Php Request in Wireshark](Images/EchoPhpRequest.png)
 
-![Figure 15: Echo Php Response in Wireshark](/labs/lab1/Images/EchoPhpResponse.png)
+![Figure 15: Echo Php Response in Wireshark](Images/EchoPhpResponse.png)
 
 2) Curl - I used the curl command to create an HTTP POST request with my name in the data. The command syntax involved specifying the URL to which the POST request was directed, using the -d option to include data in the request, and providing the data in the form of key-value pairs.Command-
 curl -X POST http://localhost/echo.php -d "data=Hello Everyone, From Sruthi Bopparthi"
 This curl command simulated an HTTP POST request, allowing me to observe how the echo.php page handles POST data. The server processed the request and generated an appropriate HTTP Response, displaying the personalized greeting based on the provided name parameter.
 
-![Figure 15: Curl HTTP Stream Response in Wireshark](/labs/lab1/Images/Curl.png)
+![Figure 15: Curl HTTP Stream Response in Wireshark](Images/Curl.png)
 
 3) Compare the similarity/difference between HTTP POST Request and HTTP GET Request and between the two HTTP Responses above
 
