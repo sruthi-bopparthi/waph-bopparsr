@@ -66,20 +66,20 @@ The web server will execute the CGI program, and the browser will display the ge
 
 ![Figure 11: CGI Program Output](Images/IndexOutput.png)
 
-Index.c file
-#include <stdio.h>
-int main(void)
-{
-	printf("Content-Type: text/html; charset=utf-8\n\n");
-	printf("<html>\n");
-	printf("<head><title>WAPH</title></head>");
-	printf("<body>\n");
-	printf("<h1>Lab1 - Sruthi Bopparthi</h1>\n");
-	printf("<p>I love to so study CGI</p>");
-	printf("</body>");
-	printf("</html>");
-	return 0;
-}
+```c
+	#include <stdio.h>
+	int main(void){
+		printf("Content-Type: text/html; charset=utf-8\n\n")
+		printf("<html>\n");
+		printf("<head><title>WAPH</title></head>");
+		printf("<body>\n");
+		printf("<h1>Lab1 - Sruthi Bopparthi</h1>\n");
+		printf("<p>I love to so study CGI</p>");
+		printf("</body>");
+		printf("</html>");
+		return 0;
+	}
+```
 
 ### Task 2 - A simple PHP Web Application with user input
 
@@ -90,9 +90,13 @@ int main(void)
 2) Demonstrate that you developed and deployed an echo Web application in PHP, e.g., echo.php
 
 I developed and deployed an echo.php web application in PHP, which involves creating a PHP script to output user-submitted data. The script uses the $_GET superglobal to retrieve data from the URL parameters and then echoes that data back to the user. Below is the source code for the echo.php file:
+
+```php
 <?php
   echo $_REQUEST["data"];
 ?>
+```
+
 Regarding security risks, this simple web application has a potential security issue known as Cross-Site Scripting (XSS). If user input is not properly sanitized or validated, an attacker could inject malicious scripts into the application, compromising the security of users. To mitigate this risk, input validation and sanitation measures should be implemented, such as using functions like htmlspecialchars to ensure that user input is treated as plain text and not interpreted as code by the browser.
 
 ![Figure 13: Echo Php Program Output](Images/EchoPhp.png)
