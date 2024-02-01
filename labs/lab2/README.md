@@ -7,8 +7,7 @@
 ### Name: Sruthi Sridhar Bopparthi
 ### Email: bopparsr@mail.uc.edu
 
-<img src="Images/Sruthi_Pic.jpeg"  width="250" height="250"><p><h3> Figure 1: Sruthi Headshot</h3></p>
-
+![Figure 2: Sruthi Headshot ](Images/Sruthi_Pic.jpeg)
 
 ## Repository Information
 ### Repository's URL: [https://github.com/SruthiAelay/waph-bopparsr.git](https://github.com/SruthiAelay/waph-bopparsr.git)
