@@ -3,11 +3,12 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="https://waph-uc.github.io/style1.css">
 	<style>
-		.button{
-			background-color:#4CAF50;
-			border:none;
+		.button
+		{
+			background-color:#b4a7d6;
+			border:groove;
 			color:white;
-			padding:5px;
+			padding:10px;
 			text-align:center;
 			text-decoration:none;
 			display:inline-block;
@@ -15,52 +16,60 @@
 			margin:4px2px;
 			cursor:pointer;
 		}
-		.round{
+		.round
+		{
 			border-radius:8px;
 		}
-		#response{
-			background-color:#ff9800;
+		#response
+		{
+			background-color:#d5a6bd;
+		}
+		#main
+		{
+			border-style: solid;
+			border-color: #741b47;
+			border-width: 3px;
+			background-color: #ead1dc;
 		}
 	</style>
-<meta charset="utf-8">
-<title>WAPH- SRUTHI SRIDHAR BOPPARTHI</title>
+	<meta charset="utf-8">
+	<title>WAPH_Sruthi Sridhar Bopparthi</title>
 </head>
 <body>
-<div class="container wrapper">
-	<div id="top">
-		<h1>Web Application Programming and Hacking</h1>
-		<h2>Front End Development Lab </h2>
-		<h3>Instructor : Dr Phu Phung</h3>
+	<div class="container wrapper">
+	<div id='top'>
+		<h1> Web Application Programming and hacking</h1>
+		<h2>Front-end web development Lab</h2>
+		<h3>Instructor: dr. Phu Phung</h3>
 	</div>
 	<div class="wrapper">
-		<div id="menubar">
+	<div id="menubar">
 			<h3>Student : Sruthi Sridhar Bopparthi</h3>
 			<div id="email" onclick="showOrHideEmail()">Display my Email</div>
 			<script type="text/javascript" src="email.js"></script>
-			<img src="images/Sruthi_Pic.jpg" alt="My headshot" width="50">
+			<img src="images/Sruthi_Pic.jpeg" alt="My headshot" width="50">
 			<div id="digital-clock"></div>
-			<canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+			<canvas id="analog-clock" width="150" height="150" style="background-color:#999;"></canvas>
 			<script src="https://waph-uc.github.io/clock.js"></script>
 		</div>
-		<div id="main">
-			<p>A Simple HTML Page</p>
-			Using the <a href="https://www.w3schools.com/html">W3 Schools Template</a>
-			<hr>
-			<b>Interaction with HTTP Forms</b>
-			<div>
-				<i>Form with HTTP GET Request</i>
-				<form action="/echo.php" method="GET">
-				<lable for="data">Enter the input text</lable>
-				<input type="text" name="data" onkeyup="console.log('you have clicked a Key')">
-				<input type="submit" value="submit">
-				</form>
-			</div>
-			<div>
+	<div id="main">
+		<p> A simple HTML page </p>
+		Using the <a href="https://www.w3schools.com/html"> W3Schools template</a>
+		<hr>
+		<b>Interaction with forms</b>
+		<div>
+			<i>Forms with an HTTP GET Request</i>
+			<form action="/echo.php" method="GET">
+				Your Input: <input name="data">
+				<input class="button round" type="submit" value="Submit">
+			</form>
+		</div>
+		<div>
 				<i>Form with HTTP POST Request</i>
 				<form action="/echo.php" method="POST">
 				<lable for="data">Enter the input text</lable>
 				<input type="text" name="data" onkeyup="console.log('you have clicked a Key')">
-				<input type="submit" value="submit">
+				<input class="button round" type="submit" value="submit">
 				</form>
 			</div>
 			<div>
@@ -79,8 +88,8 @@
 				<i>Inlined JavaScript</i>
 				<div id="inlineDate" onClick="document.getElementById('inlineDate').innerHTML=Date()">Click to dsplay time and date</div>
 				</div>
-		</div>
 	</div>
+</div>
 </div>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" 
 		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -90,21 +99,6 @@
 			document.getElementById('digital-clock').innerHTML=" The current Time is : "+ Date();
 		}
 		setInterval(displayTime,500);
-		
-	</script>
-	<script>
-
-		function showOrHideEmail(){
-			var shown=false;
-			if(shown){
-				document.getElementById('email').innerHTML="Show my email";
-				shown=false;
-			}else{
-				var myemail="<a href='mailto:bopparsr"+"@"+"ucmail.uc.edu'>bopparsr"+"@"+"ucmail.uc.edu</a>";
-				document.getElementById('email').innerHTML=myemail;
-				shown=true;
-			}
-		}
 	</script>
 	<script type=text/javascript>
 			var canvas=document.getElementById("analog-clock");
@@ -139,7 +133,7 @@
 				var input=$("#data").val();
 				if(input.length==0)
 					return;
-				$.get("echo.php?data="+input,
+				$.get("/echo.php?data="+input,
 				      function(result){
 					      printResult(result);
 						});
@@ -149,7 +143,7 @@
 				var input=$("#data").val();
 				if(input.length==0)
 					return;
-				$.post("echo.php",{data:input},function(result){
+				$.post("/echo.php",{data:input},function(result){
 					printResult(result);
 					});
 				$("#data").val("");
@@ -166,6 +160,5 @@
 				$("#response").html("Hello "+name+" ,your age should be "+result.age);
 			}
 	</script>
-		
 </body>
 </html>
