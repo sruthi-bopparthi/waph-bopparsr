@@ -28,7 +28,7 @@ Link to Lab2 code : [https://github.com/SruthiAelay/waph-bopparsr/tree/main/labs
 
 ### a. Develop a simple HTML file (named waph-yourusername.html) with basic tags, an image of your headshot, and a form.
 
-To create my HTML file, "waph-bopparsr.html," I started with the basic HTML structure, including tags like `<!DOCTYPE html>`, `<html>`, `<head>`, and `<body>`. In the `<head>` section, I added meta tags for character set and viewport and set a title for my webpage. Inside the `<body>` section, I used heading tags to declare my name and my professor's name. I included an `<img>` tag for my headshot and a `<form>` tag to handle form actions. Personalizing the content within these tags, such as "Your Webpage Title," "Your Name," and "Professor's Name," I saved the file and opened it in a web browser to view my simple webpage.
+To create my HTML file, "waph-bopparsr.html," I started with the basic HTML structure, including tags like `<!DOCTYPE html>`, `<html>`, `<head>`, and `<body>`. In the `<head>` section, I added meta tags for character set and viewport and set a title for my webpage. Inside the `<body>` section, I used heading tags to declare my name and my professor's name. I included an `<img>` tag for my headshot and a `<form>` tag to handle form actions. 
 
 ![Figure 2: Http Get Request with Form ](Images/HttpGetRequest.png)
 
