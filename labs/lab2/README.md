@@ -28,7 +28,7 @@ Link to Lab2 code : [https://github.com/SruthiAelay/waph-bopparsr/tree/main/labs
 
 ### a. Develop a simple HTML file (named waph-yourusername.html) with basic tags, an image of your headshot, and a form.
 
-To create my HTML file, "waph-bopparsr.html," I started with the basic HTML structure, including tags like '<!DOCTYPE html>', '<html>', '<head>', and '<body>'. In the <head> section, I added meta tags for character set and viewport and set a title for my webpage. Inside the '<body>' section, I used heading tags to declare my name and my professor's name. I included an '<img>' tag for my headshot and a '<form>' tag to handle form actions. Personalizing the content within these tags, such as "Your Webpage Title," "Your Name," and "Professor's Name," I saved the file and opened it in a web browser to view my simple webpage.
+To create my HTML file, "waph-bopparsr.html," I started with the basic HTML structure, including tags like `<!DOCTYPE html>`, `<html>`, `<head>`, and `<body>`. In the `<head>` section, I added meta tags for character set and viewport and set a title for my webpage. Inside the `<body>` section, I used heading tags to declare my name and my professor's name. I included an `<img>` tag for my headshot and a `<form>` tag to handle form actions. Personalizing the content within these tags, such as "Your Webpage Title," "Your Name," and "Professor's Name," I saved the file and opened it in a web browser to view my simple webpage.
 
 ![Figure 2: Http Get Request with Form ](Images/HttpGetRequest.png)
 
@@ -54,13 +54,13 @@ In crafting my HTML page, I integrated diverse JavaScript functionalities to aug
 
 ### a. Ajax
 
-I updated my HTML page by introducing a user input field, a button, and a '<div>' element. With JavaScript, I programmed the button to retrieve user input when clicked. Subsequently, I implemented an Ajax GET request, leveraging the echo.php web application from a previous lab. This request is designed to send the user input to the server. To complete the interaction, I set up an event listener to capture the HTTP response and display its content in the response element on my webpage. 
+I updated my HTML page by introducing a user input field, a button, and a `<div>` element. With JavaScript, I programmed the button to retrieve user input when clicked. Subsequently, I implemented an Ajax GET request, leveraging the echo.php web application from a previous lab. This request is designed to send the user input to the server. To complete the interaction, I set up an event listener to capture the HTTP response and display its content in the response element on my webpage. 
 
 ![Figure 10: Ajax Echo Response](Images/AjaxEcho.png)
 
 ### b. CSS 
 
-I enhanced my webpage's visual appeal by incorporating CSS through various methods. Using inline CSS, I directly applied styles to specific elements within the HTML, tailoring their appearance individually. I applied inline CSS to Analog clock to set background color. In the '<head>' section of my HTML, I employed internal CSS using the '<style>' tag to define broader styling rules that apply to multiple elements. This allowed for consistent formatting across the page. I applied this for the button and setting the backgrounf colors for heading, adding borders, border color to User input and requests. For a more organized approach, I created an external CSS file (e.g., styles.css) and linked it to my HTML using the '<link>' tag. This external stylesheet centralized my styling instructions, promoting maintainability. Additionally, I utilized a remote CSS file, accessed through a provided link, to leverage pre-existing styles and further streamline the design process. 
+I enhanced my webpage's visual appeal by incorporating CSS through various methods. Using inline CSS, I directly applied styles to specific elements within the HTML, tailoring their appearance individually. I applied inline CSS to Analog clock to set background color. In the `<head>` section of my HTML, I employed internal CSS using the `<style>` tag to define broader styling rules that apply to multiple elements. This allowed for consistent formatting across the page. I applied this for the button and setting the backgrounf colors for heading, adding borders, border color to User input and requests. For a more organized approach, I created an external CSS file (e.g., styles.css) and linked it to my HTML using the '<link>' tag. This external stylesheet centralized my styling instructions, promoting maintainability. Additionally, I utilized a remote CSS file, accessed through a provided link, to leverage pre-existing styles and further streamline the design process. 
 
 ![Figure 11: CSS Styling](Images/CSS.png)
 
@@ -262,13 +262,3 @@ Code-
 </body>
 </html>
 ```
-
-
-
-
-
-
-
-
-
-
