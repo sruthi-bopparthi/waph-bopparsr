@@ -7,7 +7,7 @@
 ### Name: Sruthi Sridhar Bopparthi
 ### Email: bopparsr@mail.uc.edu
 
-![Figure 1: Sruthi's Headshot](Images/Sruthi_Pic.jpeg)
+![Sruthi's Headshot](Images/Sruthi_Pic.jpeg)
 
 ## Repository Information
 ### Repository's URL: [https://github.com/SruthiAelay/waph-bopparsr.git](https://github.com/SruthiAelay/waph-bopparsr.git)
@@ -144,7 +144,7 @@ Possible Source code:
 echo htmlentities($_REQUEST('input'));
 ```
 
-![Figure 8: Level 6 ](Images/Level6.png)  **** DO IT ***
+![Figure 8: Level 6 ](Images/Level6.png) 
 
 ![Figure 9: Level 6 code](Images/Level6Code.png)
 
