@@ -31,7 +31,7 @@ Script to attack:
 <script>alert('Level 0 - Hacked by Sruthi Sridhar Bopparthi')</script>
 ```
 
-![Figure 2: Level 0 ](Images/Level0.png)
+![Level 0 ](Images/Level0.png)
 
 ### Level 1
 
@@ -42,7 +42,7 @@ Exploiting XSS vulnerabilities involves adding a malicious script to the end of 
 input=<script>alert('Level 1 - Hacked by Sruthi Sridhar Bopparthi')</script>
 ```
 
-![Figure 3: Level 1 ](Images/Level1.png)
+![Level 1 ](Images/Level1.png)
 
 ### Level 2
 
@@ -62,7 +62,7 @@ Possible source code:
 	echo $_POST['input'];
 ```
 
-![Figure 4: Level 2 ](Images/Level2.png)
+![Level 2 ](Images/Level2.png)
 
 ### Level 3
 
@@ -80,7 +80,7 @@ Possible Source code:
 	$input = str_replace(['<script>', '</script>'], '', $input)
 ```
 
-![Figure 5: Level 3 ](Images/Level3.png) *********DO IT
+![Level 3 ](Images/Level3.png)
 
 ### Level 4
 
@@ -104,7 +104,7 @@ Possible Source code:
 
 ```
 
-![Figure 6: Level 4 ](Images/Level4.png)
+![Level 4 ](Images/Level4.png)
 
 ### Level 5
 
@@ -127,7 +127,7 @@ Possible Source Code:
 		echo($input);
 ```
 
-![Figure 7: Level 5 ](Images/Level5.png)
+![Level 5 ](Images/Level5.png)
 
 ### Level 6
 
@@ -144,9 +144,9 @@ Possible Source code:
 echo htmlentities($_REQUEST('input'));
 ```
 
-![Figure 8: Level 6 ](Images/Level6.png) 
+![Level 6 ](Images/Level6.png) 
 
-![Figure 9: Level 6 code](Images/Level6Code.png)
+![Level 6 code](Images/Level6Code.png)
 
 
 ## Task 2 : DEFENCE
@@ -155,9 +155,9 @@ echo htmlentities($_REQUEST('input'));
 
 Security against XSS attacks has been significantly improved in the updated echo.php file for Labs 1 and 2. Initially, the script verifies if the input is empty; if it is, PHP execution is stopped to stop additional processing. The input is cleaned using the htmlentities() function after it has been validated. By transforming potentially dangerous characters into their appropriate HTML entities, this function ensures that they are safe to see on the webpage. This reduces the possibility of XSS vulnerabilities and guarantees that the input is handled just as text.
 
-![Figure 10: Git Changes for echo.php](Images/GitEcho.png)
+![Git Changes for echo.php](Images/GitEcho.png)
 
-![Figure 11: Echo Response](Images/echo.png)
+![Echo Response](Images/echo.png)
 
 ### b. Front-end prototype
 
@@ -167,22 +167,22 @@ To further remove any possible security vulnerabilities, the output texts were c
 
 1. A new function named validateInput() has been added to improve the security of HTTP GET and POST request forms. This function ensures the validity of the supplied data by requiring users to input text before executing the request. In addition, situations where plain text is displayed instead of HTML rendering when it is not necessary have been discovered in order to reduce the danger of XSS attacks. To strictly render plain text and reduce the possibility of malicious script execution, the.innerHTML property has been replaced with.innerText. Together, these steps strengthen the web application's security protocols pertaining to input validation and output rendering.
 
-![Figure 12: Git Changes for HTTP Requests](Images/GitHttp.png)
+![Git Changes for HTTP Requests](Images/GitHttp.png)
 
-![Figure 13: GET, POST Response when input field is empty](Images/GetEmpty.png)
+![GET, POST Response when input field is empty](Images/GetEmpty.png)
 
-![Figure 14: Git Changes for new fucntions added](Images/GitFunctions.png)
+![Git Changes for new fucntions added](Images/GitFunctions.png)
 
-![Figure 15: AJAX Response when input field is empty](Images/AjaxEmpty.png)
+![AJAX Response when input field is empty](Images/AjaxEmpty.png)
 
 2. EncodeInput() is a recently introduced function designed to prevent cross-site scripting (XSS) attacks. Through the transformation of special characters into the appropriate HTML entities, this function helps to sanitize the answer. By converting the content, the HTML document's content is effectively rendered as plain text, rendering it unexecutable and immune to malicious programs. Additionally, the code generates a new `<div>` element and appends the cleaned content (in innerText) to it. The function then returns the HTML content contained in this cleaned-up `<div>` element, guaranteeing improved security and guarding against potential XSS vulnerabilities.
 
-![Figure 16: Ajax Response](Images/AjaxResponse.png)
+![Ajax Response](Images/AjaxResponse.png)
 
 3. The API calls now include extra validation checks for increased security and dependability. New checks have been added to make sure that the jokes that are fetched from the specified API endpoint [https://v2.jokeapi.dev/joke/Programming?type=single](https://v2.jokeapi.dev/joke/Programming?type=single) are not empty in the JSON response, as well as the received result.joke property. An error message alerting the user is issued if either of these variables turns out to be null.
 
-![Figure 17: Joke Api Git changes](Images/GitJoke.png)
+![Joke Api Git changes](Images/GitJoke.png)
 
 4. Similarly, additional validation steps have been added to the asynchronous function guessAge(). These include making sure the user-provided input is not null or empty and that the output obtained is neither empty nor zero. An appropriate error message alerts the user to the problem if either of these requirements is not met. By reducing the possibility of mistakes and guaranteeing the accuracy of incoming data as well as user input, these improvements strengthen the application's dependability and security.
 
-![Figure 17: Age API](Images/Age.png)
+![Age API](Images/Age.png)
