@@ -15,9 +15,9 @@
 
 # Hackathon 1 - Cross-site Scripting Attacks and Defences
 
-## The lab's overview
+## Lab's overview
 
-In this activity, we will delve into the intriguing world of reflected cross-site scripting (XSS) attacks, gaining practical experience and insights into web application vulnerabilities. The challenge unfolds across seven levels, each presenting an opportunity to showcase the skills by injecting code to display my name using the alert() function. The increasing difficulty from Level 0 to Level 6, coupled with point assignments, promises a dynamic learning curve. To succeed, we will not only demonstrate my proficiency in executing XSS attacks but also analyze and decipher the source code of the web application, honing my understanding of crucial web security principles. This hands-on exploration will significantly contribute to expertise in ethical hacking, security assessment, and responsible disclosure practices.
+In hackathon activity, we will delve into the intriguing world of reflected cross-site scripting (XSS) attacks, gaining practical experience and insights into web application vulnerabilities. The challenge unfolds across seven levels, each presenting an opportunity to showcase the skills by injecting code to display my name using the alert() function. The increasing difficulty from Level 0 to Level 6, coupled with point assignments, promises a dynamic learning curve. To succeed, we will not only demonstrate my proficiency in executing XSS attacks but also analyze and decipher the source code of the web application, honing my understanding of crucial web security principles. This hands-on exploration will significantly contribute to expertise in ethical hacking, security assessment, and responsible disclosure practices.
 
 Link to Lab2 code : [https://github.com/SruthiAelay/waph-bopparsr/tree/main/Hackathons/Hackathon1]([https://github.com/SruthiAelay/waph-bopparsr/tree/main/Hackathons/Hackathon1])
 
@@ -48,12 +48,12 @@ input=<script>alert('Level 1 - Hacked by Sruthi Sridhar Bopparthi')</script>
 
 URL : [http://waph-hackathon.eastus.cloudapp.azure.com/xss/level2/echo.php](URL : http://waph-hackathon.eastus.cloudapp.azure.com/xss/level2/echo.php)
 
-As the HTTP request doesn't engage with input fields or accept path variables, the URL is linked to a simple HTML form. Using this form, we can directly submit the attacking script. This method enables the injection of malicious code into the web application, allowing for the investigation of XSS vulnerabilities.
+The request of HTTP does not engage with user inputs or path variables, this URL is linked to a HTML form. Using this form, we can directly inserting attacking script. This method enables the insertion of attacking code into the web application, allowing for the investigation of XSS vulnerabilities.
 
 ```
 input=<script>alert('Level 2 - Hacked by Sruthi Sridhar Bopparthi')</script>
 ```
-Possible source code:
+Possible Code:
 ```
 	if(!isset($_POST['input']))
 	{
@@ -68,13 +68,13 @@ Possible source code:
 
 URL : [http://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php](URL : http://waph-hackathon.eastus.cloudapp.azure.com/xss/level3/echo.php)
 
-At this point, if the `<script>` tag is sent through the input variable directly, the web application filters it out. In order to get past this filter and properly attack the URL, the attacking code must be broken up into smaller pieces and then added together. This technique shows the perseverance and ingenuity needed in XSS attacks by allowing the injection of code that causes an alert to appear on the webpage.
+Now, if `<script>` tag is sent through the variable of input directly, the web application filters it out. In order to get past this filter and properly attack the URL, the attacking code must be broken up into smaller pieces and then added together. This technique shows the perseverance and ingenuity needed in XSS attacks by allowing the injection of mallicious code that causes alert to appear on the particular webpage.
 
 ```
 input=<scr<sc<script>ript>ipt>alert('Level 3 - Hacked by Sruthi Sridhar Bopparthi')</scr</sc</script>>>
 ```
 
-Possible Source code:
+Possible Code:
 ```
 	$input = echo $_POST['input'];
 	$input = str_replace(['<script>', '</script>'], '', $input)
@@ -86,10 +86,10 @@ Possible Source code:
 
 URL : [http://waph-hackathon.eastus.cloudapp.azure.com/xss/level4/echo.php](URL : http://waph-hackathon.eastus.cloudapp.azure.com/xss/level4/echo.php)
 
-I used the onload() event of the `<body>` tag to run the XSS script in this case where the `<script>` element is fully filtered, even if it's broken and concatenated. The script sends out an alert when the page loads by embedding itself inside the onload() event. By evading the filter, harmful code can be injected without depending on the `<script>` tag.
+I tried using the onload() event of `<body>` tag in order to run XSS script. Therfore, the `<script>` element is fully filtered, even though the script is broken or/and concatenated. The script sends out an alert when the page loads by embedding itself inside the onload() event. By evading the filter, harmful code can be injected without depending on the `<script>` tag.
 
 ```
-input=<body onload="alert('Level 4 - Hacked by Sruthi Sridhar Bopparthi')">This website is hacked</body>
+input = <body onload="alert('Level 4 - Hacked by Sruthi Sridhar Bopparthi')">This website is hacked</body>
 ```
 
 Possible Source code:
@@ -110,7 +110,7 @@ Possible Source code:
 
 URL : [http://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php](URL : http://waph-hackathon.eastus.cloudapp.azure.com/xss/level5/echo.php)
 
-The security measures have been further enhanced in this specific level. The alert() function and the `<script>` element are both removed. I've used a mix of Unicode encoding and the `<body>` tag's onload() function to get around these limitations and still trigger a popup alert. By using this technique, one can circumvent the direct filters that are applied to `<script>` and alert() and execute JavaScript code indirectly. The utilization of Unicode encoding facilitates the representation of characters in a manner that the browser can comprehend as JavaScript code, hence permitting the attainment of the intended functionality in spite of the filters.
+Security measures have been further enhanced in level 5. I've used  `<body>` tag encoding onload() function to get around these limitations and still trigger a popup alert. By using this technique, one can circumvent the direct filters that are applied to `<script>` and alert() and execute JavaScript code indirectly. The utilization of Unicode encoding facilitates the representation of characters in a manner that the browser can comprehend as JavaScript code, hence permitting the attainment of the intended functionality.
 
 ```
 input=<body onload="\u0061alert('Level 5 - Hacked by Sruthi Sridhar Bopparthi')">This website is hacked</body>
@@ -133,7 +133,7 @@ Possible Source Code:
 
 URL : [http://waph-hackathon.eastus.cloudapp.azure.com/xss/level6/echo.php](URL : http://waph-hackathon.eastus.cloudapp.azure.com/xss/level6/echo.php)
 
-In this case, it looks that the source code uses the htmlentities() method to translate characters into their corresponding HTML entities, which results in the user input being shown on the webpage only as text. In this case, JavaScript event listeners are used to initiate an alert. In particular, the onclick() event listener is used, which causes the webpage to alert the user whenever a key is struck in the input field. This method maintains the security precaution of displaying user input as plain text, but permits the execution of JavaScript code.
+In this case, htmlentities() method is used to translate characters into their corresponding HTML entities, which results in the input of user being shown on the webpage only as text. In this case, JavaScript event listeners are used to initiate an alert. In particular, the onclick() event listener is used, which causes the webpage to alert the user whenever any key is entered in user input. The method maintains the security precaution of displaying user input as plain text, but permits the execution of JavaScript code.
 
 ```
 
@@ -165,7 +165,7 @@ A comprehensive evaluation of the code in the waph-bopparsr.html file from Lab 2
 
 To further remove any possible security vulnerabilities, the output texts were cleaned. Together, these steps strengthen the codebase's security posture and reduce the possibility of vulnerabilities, especially those connected to XSS attacks.
 
-1. A new function named validateInput() has been added to improve the security of HTTP GET and POST request forms. This function ensures the validity of the supplied data by requiring users to input text before executing the request. In addition, situations where plain text is displayed instead of HTML rendering when it is not necessary have been discovered in order to reduce the danger of XSS attacks. To strictly render plain text and reduce the possibility of malicious script execution, the.innerHTML property has been replaced with.innerText. Together, these steps strengthen the web application's security protocols pertaining to input validation and output rendering.
+1. validateInput() is added to improve the security of POST & GET requests. This function ensures the validity of the supplied data by requiring users to input text before executing the request. In addition, situations where plain text is displayed instead of HTML rendering when it is not necessary have been discovered in order to reduce the danger of XSS attacks. To check plain text and reduce the possibility of any attacking script execution, the innerHTML property has been replaced with.innerText. Together, these steps strengthen the web application's security protocols pertaining to input validation and output rendering.
 
 ![Git Changes for HTTP Requests](Images/GitHttp.png)
 
@@ -179,7 +179,7 @@ To further remove any possible security vulnerabilities, the output texts were c
 
 ![Ajax Response](Images/AjaxResponse.png)
 
-3. The API calls now include extra validation checks for increased security and dependability. New checks have been added to make sure that the jokes that are fetched from the specified API endpoint [https://v2.jokeapi.dev/joke/Programming?type=single](https://v2.jokeapi.dev/joke/Programming?type=single) are not empty in the JSON response, as well as the received result.joke property. An error message alerting the user is issued if either of these variables turns out to be null.
+3. The API calls now include extra validation checks for increased security and dependability. New checks have been added to make sure that the jokes that are fetched [https://v2.jokeapi.dev/joke/Programming?type=single](https://v2.jokeapi.dev/joke/Programming?type=single) are not empty in the JSON response, as well as the received result.joke property. An error message alerting the user is issued if either of these variables turns out to be null.
 
 ![Joke Api Git changes](Images/GitJoke.png)
 
