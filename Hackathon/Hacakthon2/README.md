@@ -46,7 +46,7 @@ bopparsr' OR 1=1 LIMIT 1; #
 
 Possible Code:
 ```
-$sqlquery = "SELECT * FROM users WHERE username = "$username" AND password=md5("$password")";
+$sqlquery = "SELECT * FROM user WHERE user = "$user" AND pass=md5("$pass")";
 $res = $mysqli -> query($sqlquery)
 if ($res -> num_rows <= 1):
     return TRUE;
@@ -109,7 +109,7 @@ id = 3 union select "bopparsr',"Sruthi Sridhar Bopparthi","WAPH"
 3) Display the Database Schema
 
 - Used advanced SQL injection techniques to exploit vulnerabilities and gain unauthorized access.
-- Formulating SQL queries that fetch the entire database schema, including tables and columns.
+- Formulating SQL queries that fetch the database schema, including its tables data and columns data.
 
 ```
 id: 1 UNION SELECT "bopparsr", table_name, column_name FROM information_schema.columns
