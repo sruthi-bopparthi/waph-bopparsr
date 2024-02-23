@@ -28,6 +28,6 @@
 			printf("Database connection failed: %s\n", $mysqli->connect_error);
 			exit();
 		}
-		return FALSE;
+		return TRUE;
 	}
 ?>
