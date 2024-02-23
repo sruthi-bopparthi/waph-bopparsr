@@ -13,10 +13,10 @@
 ### Repository's URL: [https://github.com/SruthiAelay/waph-bopparsr.git](https://github.com/SruthiAelay/waph-bopparsr.git)
 ### This is a private repository which is used to store all the codes related to course Topics in Computer Systems. The structure of this repository is as mentioned below.
 
-# Hackathon 1 - Cross-site Scripting Attacks and Defences
+# Hackathon 2 - SQL Injection Attacks
 
 ## Lab's overview
-This hackathon is designed to provide participants with practical insights into SQL Injection Attacks (SQLi), a prevalent and critical security vulnerability in web applications. The learning experience is divided into three levels, each offering a progression of challenges and knowledge acquisition. Participants, through hands-on activities, actively identify and exploit vulnerabilities within a virtual web application environment. A key focus is on bypassing login checks, which allows us to understand how SQL injections can manipulate authentication processes. As we advance, the ultimate goal is to gain unauthorized access to the system, mirroring real-world scenarios where SQLi attacks can lead to unauthorized data retrieval. 
+The hackathon is designed to provide participants with practical insights into SQL Injection Attacks (SQLi), a prevalent and critical security vulnerability in web applications. The learning experience is divided into three levels, each offering a progression of challenges and knowledge acquisition. Participants, through hands-on activities, actively identify and exploit vulnerabilities within a virtual web application environment. A key focus is on bypassing login checks, which allows us to understand how SQL injections can manipulate authentication processes. As we advance, the ultimate goal is to gain unauthorized access to the system, mirroring real-world scenarios where SQLi attacks can lead to unauthorized data retrieval. 
 
 Link to Hackathon2 code : [https://github.com/SruthiAelay/waph-bopparsr/tree/main/Hackathon/Hacakthon2]([https://github.com/SruthiAelay/waph-bopparsr/tree/main/Hackathon/Hacakthon2])
 
@@ -28,7 +28,7 @@ In Level 0, I employed single quotes after entering my username to effectively t
 
 SQL Injection Code:
 ```
-bopparsr' OR 1=1; #
+bopparsr' OR 1 = 1 ; #
 ```
 
 ![Level 0 ](Images/Level0.png)
@@ -46,9 +46,9 @@ bopparsr' OR 1=1 LIMIT 1; #
 
 Possible Code:
 ```
-$sql = "SELECT * FROM users WHERE username = "$username" AND password=md5("$password")";
-$result = $mysqli -> query($sql)
-if ($result -> num_rows ==1):
+$sqlquery = "SELECT * FROM users WHERE username = "$username" AND password=md5("$password")";
+$res = $mysqli -> query($sqlquery)
+if ($res -> num_rows <= 1):
     return TRUE;
 else:
     return FALSE;
@@ -62,7 +62,7 @@ URL : [http://waph-hackathon.eastus.cloudapp.azure.com/sqli/level2](http://waph-
 
 ### a) Detecting SQLi Vulnerabilities
 
-While checking for vulnerabilities, I looked at the login pages and tried different things on the products.php page. I saw that the response wasn't always the same, especially when using an ID like 'bopparsr,' which caused a big error. When I put data in double quotes, the response was empty. These inconsistencies suggest a problem with how the website handles input, making it susceptible to SQL injection in that specific part. The screenshot below shows my tests and the different results based on the input I used.
+While checking for weakness in the code, I looked at the login webpages and tried different things on the products URL page. I saw that the result wasn't always the same, especially when using an ID like 'bopparsr,' which caused a big error. When I put data in double quotes, the response was empty. These inconsistencies suggest a problem with how the website handles input, making it susceptible to SQL injection in that specific part. The screenshot below shows my tests and the different results based on the input I used.
 
 SQL Injection Code :
 ```
@@ -112,7 +112,7 @@ id = 3 union select "bopparsr',"Sruthi Sridhar Bopparthi","WAPH"
 - Formulating SQL queries that fetch the entire database schema, including tables and columns.
 
 ```
-id: 1 UNION SELECT "bopparsr",table_name,column_name FROM information_schema.columns
+id: 1 UNION SELECT "bopparsr", table_name, column_name FROM information_schema.columns
 ```
 
 ![Level 2 Database Schema ](Images/Level2Schema.png)
