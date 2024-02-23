@@ -18,13 +18,13 @@
 ## Lab's overview
 This hackathon is designed to provide participants with practical insights into SQL Injection Attacks (SQLi), a prevalent and critical security vulnerability in web applications. The learning experience is divided into three levels, each offering a progression of challenges and knowledge acquisition. Participants, through hands-on activities, actively identify and exploit vulnerabilities within a virtual web application environment. A key focus is on bypassing login checks, which allows us to understand how SQL injections can manipulate authentication processes. As we advance, the ultimate goal is to gain unauthorized access to the system, mirroring real-world scenarios where SQLi attacks can lead to unauthorized data retrieval. 
 
-Link to Hackathon2 code : [https://github.com/SruthiAelay/waph-bopparsr/tree/main/Hackathons/Hackathon2]([https://github.com/SruthiAelay/waph-bopparsr/tree/main/Hackathons/Hackathon2])
+Link to Hackathon2 code : [https://github.com/SruthiAelay/waph-bopparsr/tree/main/Hackathon/Hacakthon2]([https://github.com/SruthiAelay/waph-bopparsr/tree/main/Hackathon/Hacakthon2])
 
 ## Level 0
 
 URL : [http://waph-hackathon.eastus.cloudapp.azure.com/sqli/level0](http://waph-hackathon.eastus.cloudapp.azure.com/sqli/level0)
 
-In Level 0, I employed single quotes after entering my username to effectively terminate the input within the SQL statement. Following this, I inserted 1=1 to ensure the SQL statement always evaluates to TRUE. Lastly, I appended ";" and # to signify the conclusion of the SQL statement and to comment out the remaining part of the statement.
+In Level 0, I employed single quotes after entering my username to effectively terminate the input within the SQL statement. Following this, I inserted 1=1 to ensure the SQL statement always evaluates to TRUE. Lastly, I appended ```;``` and ```#``` to signify the conclusion of the SQL statement and to comment out the remaining part of the statement.
 
 SQL Injection Code:
 ```
@@ -93,6 +93,7 @@ id - 1 union select 3,'bopparsr',01
 ```
 ![Level 2 Number of Columns ](Images/Level2Columns.png)
 
+
 2) Display Your Information
 
 - SQL injection query that includes a UNION SELECT statement to display my information.
@@ -104,6 +105,7 @@ id = 3 union select "bopparsr',"Sruthi Sridhar Bopparthi","WAPH"
 
 ![Level 2 Display my information ](Images/Level2Info.png)
 
+
 3) Display the Database Schema
 
 - Used advanced SQL injection techniques to exploit vulnerabilities and gain unauthorized access.
@@ -113,7 +115,8 @@ id = 3 union select "bopparsr',"Sruthi Sridhar Bopparthi","WAPH"
 id: 1 UNION SELECT "bopparsr",table_name,column_name FROM information_schema.columns
 ```
 
-![Level 2 Database Scheme ](Images/Level2Schema.png)
+![Level 2 Database Schema ](Images/Level2Schema.png)
+
 
 4) Display Login Credentials
 
@@ -122,7 +125,8 @@ id: 1 UNION SELECT "bopparsr",table_name,column_name FROM information_schema.col
   
 ![Level 2 Login Credentials](Images/Level2Schema.png)
 
-- Descrypted hashed password of admin by using - https://hashes.com/en/decrypt/hash
+
+- Decrypted hashed password of admin by using - https://hashes.com/en/decrypt/hash
 
 ![Level 2 Login Password Decrypt ](Images/Level2Decrypt.png)
 
