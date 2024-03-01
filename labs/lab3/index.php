@@ -28,6 +28,16 @@
 			printf("Database connection failed: %s\n", $mysqli->connect_error);
 			exit();
 		}
-		return TRUE;
+
+		$sql = "SELECT * FROM users WHERE username=? AND password=md5(?)";
+		//$sql = $sql . " AND password = md5('". $password."')";
+		//echo "DEBUG > sql= $sql";
+		$stmt=$mysqli->prepare($sql);
+		$stmt->bind_param("ss",$username,$password);
+		$stmt->execute();
+		$result=$stmt->get_result();
+		if($result -> num_rows==1)
+			return TRUE;
+		return FALSE;
 	}
 ?>
