@@ -59,7 +59,7 @@ Performing a session hijacking attack involves exploiting vulnerabilities in the
 
 ### a) Revised Login System with Session Management
 
-To implement session management for a login system, started by copying the content of the index.php file from either the lab3 or lab4 folder. Create a new file named logout.php to handle logout functionality. Revise the copied index.php file to integrate session management features. Deployed both files to web server and tested the login functionality by entering valid credentials. Additionally, tested the logout functionality by accessing logout.php to ensure the session is properly destroyed.
+Started by copying the contents of the index.php file from the lab3 or lab4 folder in order to build session management for a login system. Create a new file named logout.php to handle logout functionality. Revise the copied index.php file to integrate session management features. Deployed both files to web server and tested the login functionality by entering valid credentials. Additionally, tested the logout functionality by accessing logout.php to ensure the session is properly destroyed.
 
 ![Logged in with invalid Credentials](Images/InvalidCred.png)
 
@@ -71,7 +71,7 @@ To implement session management for a login system, started by copying the conte
 
 ### b) Session Hijacking Attacks
 
-In the conducted session hijacking simulation, I logged in to the web application on one browser, manually copied the session ID, and pasted it into another browser. The process was documented with screenshots, illustrating the steps involved in the session hijacking attack. This hands-on exercise provided a practical understanding of the potential security risks associated with session management and emphasized the importance of implementing protective measures in web applications.
+In the conducted session hijacking simulation, I logged in to the web application on one browser, manually copied the session ID, and pasted it into another browser. The process was documented with screenshots, illustrating the steps involved in the session hijacking attack. This practical exercise highlighted the significance of incorporating security controls in web applications and gave a realistic grasp of the possible security issues related to session management.
 
 ![Session is copied to another browser](Images/BeforeAttack.png)
 
@@ -81,7 +81,7 @@ In the conducted session hijacking simulation, I logged in to the web applicatio
 
 ### a) Data Protection and HTTPS Setup
 
-I installed HTTPS on my web server, generated an SSL certificate, and viewed a PHP website via HTTPS. The screenshots show the details of the SSL certificate, which permits a secure connection between the client and the server. This guarantees data privacy by encrypting the information sent between the user's browser and the web server. An effective HTTPS configuration will improve the security of the web application.
+I created an SSL certificate, installed HTTPS on my web server, and used HTTPS to view a PHP website. The screenshots display the SSL certificate's details, allowing a safe link to be established between the client and the server. By encrypting the data transferred between the user's browser and the web server, this ensures data privacy. The online application's security will increase with an efficient HTTPS implementation.
 
 Code:
 ```
@@ -96,7 +96,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout waph.key -out waph.c
 
 ### b) Securing Session Against Session Hijacking Attacks - setting HttpOnly and Secure flags for cookies
 
-To bolster the security of our sessions, we implemented crucial measures by setting the HttpOnly and Secure flags for session cookies. This step ensures that session cookies are marked as HttpOnly, preventing client-side scripts from accessing them, thus mitigating the risk of cross-site scripting (XSS) attacks. Additionally, the Secure flag was applied to indicate that the cookies should only be transmitted over secure, encrypted connections, providing an extra layer of protection against unauthorized interception. 
+We took important steps, such as setting the HttpOnly and Secure flags for session cookies, to strengthen the security of our sessions. By making ensuring that session cookies are designated as HttpOnly, this step reduces the possibility of cross-site scripting (XSS) threats by prohibiting client-side scripts from accessing them. Additionally, the Secure flag was applied to indicate that the cookies should only be transmitted over secure, encrypted connections, providing an extra layer of protection against unauthorized interception. 
 
 Code:
 
@@ -117,7 +117,7 @@ Code:
 
 ### c) Securing Session Against Session Hijacking Attacks - Defense In-Depth
 
-In enhancing the security of our web application, I revised the index.php file to incorporate a new session variable that stores browser information following successful authentication. This additional layer of defense involves cross-verifying the information obtained from the user's browser with the stored session data. If discrepancies arise during this validation, indicating a potential session hijack, an alert is triggered, and the user is promptly redirected to the login page. This defense-in-depth strategy adds a proactive element to our session management, allowing us to detect and respond to any suspicious activities promptly. 
+I updated the index.php file to add a new session variable that keeps browser data after successful login in order to strengthen the security of our online application. Cross-referencing the data from the user's browser with the session data that has been stored is this extra line of protection. Should disparities emerge throughout this verification, suggesting a possible hijack of the session, an alarm is set off, and the user is immediately routed to the login screen. Our session management is made more proactive by this defense-in-depth approach, which enables us to quickly identify and address any questionable activity. 
 
 Code:
 ```
@@ -131,12 +131,3 @@ if($_SESSION["browser"] != $_SERVER["HTTP_USER_AGENT"])
 ```
 
 ![Detection of Hijacking](Images/Hijack.png)
-
-
-
-
-
-
-
-
-
