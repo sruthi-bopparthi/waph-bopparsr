@@ -75,7 +75,7 @@ Inadequate Use of ORM Tools: Properly configured Object Relational Mapping (ORM)
 Insufficient Testing and Security Practices: An application that has shown vulnerabilities (like the session hijacking vulnerability exploited earlier) might indicate a broader lack of security practices, including insufficient testing for SQL injection vulnerabilities.
 
 Link to Video:
-[https://mailuc-my.sharepoint.com/:v:/g/personal/bopparsr_mail_uc_edu/Ea53-ZwFLtpBkTIiA7yFKR8B5C2LFJ97UXaEX6j0yr1foA?e=e8aI2M&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](Step 4 and 5 Demo)
+[Step 4 and 5 Demo](https://mailuc-my.sharepoint.com/:v:/g/personal/bopparsr_mail_uc_edu/Ea53-ZwFLtpBkTIiA7yFKR8B5C2LFJ97UXaEX6j0yr1foA?e=e8aI2M&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ## Part II: Understanding and Prevention
 
