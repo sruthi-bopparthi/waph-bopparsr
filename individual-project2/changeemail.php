@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <title>User Page -Change Password </title>
+      <title>User Page -Change Name </title>
       <link rel="stylesheet" href="design.css">
    </head>
    <body>
@@ -10,21 +10,26 @@
 <?php
 	require "session_auth.php";
 	$username = $_SESSION['username'];
-	$password = $_REQUEST["newpassword"];
+	$email = $_REQUEST["newemail"];
 	$token=$_POST["nocsrftoken"];
 	if(!isset($token) or ($token!==$_SESSION["nocsrftoken"]))
 	{
 		echo "CSRF Attack is detected";
 		die();
 	}
-	if(isset($username) and isset($password))
+	if(isset($username) and isset($email))
 	{
+		?>
+            <div class="title">
+            <?php echo "Debug> changeemail.php got username=$username;newemail=$email";?>!
+             </div>
+            <?php
 		
-		if(changepassword($username,$password))
+		if(changename($username,$email))
 		{
             ?>
             <div class="title">
-            Password has been changed!!! for <?php echo htmlentities($username);?>!
+            Email has been changed!!! for <?php echo htmlentities($username);?>!
              </div>
             <?php
 		}
@@ -32,7 +37,7 @@
 		{
 			?>
             <div class="title">
-            Change password failed!!!! for <?php echo htmlentities($username);?>!
+            Change email failed!!!! for <?php echo htmlentities($username);?>!
              </div>
             <?php
 		}
@@ -41,14 +46,14 @@
 	{
 		?>
             <div class="title">
-            <?php echo "No username/password provided!";?>!
+            <?php echo "No username/email provided!";?>!
              </div>
             <?php
 		
 	}
 	
 
-	function changepassword($username,$password)
+	function changeemail($username,$email)
 	{
 		$mysqli = new mysqli('localhost','bopparsr','Shruti@123','waph');
 		if($mysqli->connect_errno)
@@ -57,15 +62,13 @@
 			exit();
 		}
 
-		$sql = "UPDATE users SET password=md5(?) WHERE username=?;";
+		$sql = "UPDATE users SET email=? WHERE username=?;";
 		$stmt=$mysqli->prepare($sql);
-		$stmt->bind_param("ss",$password,$username);
+		$stmt->bind_param("ss",$email,$username);
 		if($stmt->execute())
 			return TRUE;
 		return FALSE;
 	}
-
-	$token.die();
 	?>
 	</div>
 </body>

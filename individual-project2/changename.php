@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <title>User Page -Change Password </title>
+      <title>User Page -Change Name </title>
       <link rel="stylesheet" href="design.css">
    </head>
    <body>
@@ -10,21 +10,21 @@
 <?php
 	require "session_auth.php";
 	$username = $_SESSION['username'];
-	$password = $_REQUEST["newpassword"];
+	$name= $_REQUEST["newname"];
 	$token=$_POST["nocsrftoken"];
 	if(!isset($token) or ($token!==$_SESSION["nocsrftoken"]))
 	{
 		echo "CSRF Attack is detected";
 		die();
 	}
-	if(isset($username) and isset($password))
+	if(isset($username) and isset($name))
 	{
 		
-		if(changepassword($username,$password))
+		if(changename($username,$name))
 		{
             ?>
             <div class="title">
-            Password has been changed!!! for <?php echo htmlentities($username);?>!
+            Name has been changed!!! for <?php echo htmlentities($username);?>!
              </div>
             <?php
 		}
@@ -32,7 +32,7 @@
 		{
 			?>
             <div class="title">
-            Change password failed!!!! for <?php echo htmlentities($username);?>!
+            Name change failed!!!! for <?php echo htmlentities($username);?>!
              </div>
             <?php
 		}
@@ -41,14 +41,14 @@
 	{
 		?>
             <div class="title">
-            <?php echo "No username/password provided!";?>!
+            <?php echo "No username/name provided!";?>!
              </div>
             <?php
 		
 	}
 	
 
-	function changepassword($username,$password)
+	function changename($username,$name)
 	{
 		$mysqli = new mysqli('localhost','bopparsr','Shruti@123','waph');
 		if($mysqli->connect_errno)
@@ -57,9 +57,9 @@
 			exit();
 		}
 
-		$sql = "UPDATE users SET password=md5(?) WHERE username=?;";
+		$sql = "UPDATE users SET name=? WHERE username=?;";
 		$stmt=$mysqli->prepare($sql);
-		$stmt->bind_param("ss",$password,$username);
+		$stmt->bind_param("ss",$name,$username);
 		if($stmt->execute())
 			return TRUE;
 		return FALSE;
