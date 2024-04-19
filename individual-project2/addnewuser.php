@@ -120,8 +120,6 @@
 		}
 
 		$sql = "INSERT INTO users(name, email,username,password) VALUES (?,?,?, md5(?));";
-		//$sql = $sql . " AND password = md5('". $password."')";
-		//echo "DEBUG > sql= $sql";
 		$stmt=$mysqli->prepare($sql);
 		$stmt->bind_param("ssss",$name, $email,$username,$password);
 		if($stmt->execute())

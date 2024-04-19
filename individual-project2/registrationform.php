@@ -10,10 +10,6 @@
 </head>
 <body>
     <h1>Registration Form, WAPH</h1>
-        <!-- Headings for the form -->
-        <div class="headingsContainer">
-            <h3>Sign in</h3>
-        </div>
 
         <!-- Main container for all inputs -->
         <div class="mainContainer">
@@ -21,31 +17,29 @@
             <label for="name">Your Name</label>
             <input type="text" placeholder="Enter Name" name="name" pattern="\w+" required>
             <div class="error" id="name_error">Name is required</div>
-            <br><br>
+            
 
             <label for="email">Your Email</label>
             <input type="email" placeholder="Enter Email" name="email" required>
             <div class="error" id="email_error">Valid email is required</div>
-            <br><br>
+            
 
             <label for="username">Your username</label>
             <input type="text" placeholder="Enter Username" name="username" pattern="\w+"  required>
             <div class="error" id="username_error">Username is required</div>
-            <br><br>
+            
 
             <!-- Password -->
             <label for="password">Your password</label>
             <input type="password" placeholder="Enter Password" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$"  title="Password much have at least 8 characters with 1 special symbol !@#$%^& 1 number, 1 lowercase and 1 UPPERCASE" onchange="this.setCustomValidity(this.validity.patternMismatch?this.title:''); form.confirmpassword.pattern = this.value;"  name="password" required>
             <div class="error" id="password_error">Password requirements not met</div>
-            <br><br>
+            
 
-            <label for="confirmpassword">Your password</label>
+            <label for="confirmpassword">Re-enter Password</label>
             <input type="password" placeholder="Re-enter Password"  title="Password does not match" onchange="this.setCustomValidity(this.validity.patternMismatch?this.title:'');"  name="confirmpassword" required>
             <div class="error" id="confirmpassword_error">Passwords do not match</div>
 
-            <div class="field">
-               <input type="submit" formnovalidate value="Submit">
-            </div>
+            <button type="submit" formnovalidate>Submit</button>
             <div class="signup-link">
                Already a member? <a href="form.php">Login now</a>
             </div>
