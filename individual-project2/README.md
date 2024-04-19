@@ -93,7 +93,7 @@ Displays error messages with the invalid input highlighted if the input fails to
 	}
 ```
 
-![ Validations on Registration Form ](Images/RegistrationFormValidation.png)
+![ Validations on Registration Form ](Images/RegistrationFormValidations.png)
 
 ![ After Successfull Registration ](Images/RegistrationSuccess.png)
 
