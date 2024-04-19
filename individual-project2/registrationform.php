@@ -35,7 +35,7 @@
 
             <!-- Password -->
             <label for="password">Your password</label>
-            <input type="password" placeholder="Enter Password" pattern="^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&])[\w!@#$%^&]{8,}$"  title="Password much have at least 8 characters with 1 special symbol !@#$%^& 1 number, 1 lowercase and 1 UPPERCASE" onchange="this.setCustomValidity(this.validity.patternMismatch?this.title:''); form.confirmpassword.pattern = this.value;"  name="password" required>
+            <input type="password" placeholder="Enter Password" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$"  title="Password much have at least 8 characters with 1 special symbol !@#$%^& 1 number, 1 lowercase and 1 UPPERCASE" onchange="this.setCustomValidity(this.validity.patternMismatch?this.title:''); form.confirmpassword.pattern = this.value;"  name="password" required>
             <div class="error" id="password_error">Password requirements not met</div>
             <br><br>
 
@@ -104,19 +104,20 @@
          }
          
          function isValidEmail(email) {
-             var emailRegex = '/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
+             // var emailRegex = new RegExp(/^\S+@\S+\.\S+$/);
+         	var emailRegex = new RegExp(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
              console.log(emailRegex);
-             console.log(emailRegex);
+             // console.log(emailRegex);s
              console.log(emailRegex.test(email));
              return emailRegex.test(email);
          }
          
          function isValidPassword(password) {
              // Password must have at least 8 characters with at least one uppercase letter, one lowercase letter, one number, and one special character
-             var passwordRegex = new RegExp(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/);
-             console.log(password);
-             console.log(passwordRegex);
-             console.log(passwordRegex.test(password));
+             var passwordRegex = new RegExp(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/);
+             // console.log(password);
+             // console.log(passwordRegex);
+             // console.log(passwordRegex.test(password));
              return passwordRegex.test(password);
          }
 

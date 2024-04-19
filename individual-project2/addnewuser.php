@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>User Page </title>
-      <link rel="stylesheet" href="design.css">
-   </head>
-   <body>
-   <div class="wrapper">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>User Details</title>
+</head>
+<body>
+<div class="headingsContainer">
+            <h3>User Status</h3>
+        </div>
+	<form>
 <?php
 	$username = $_POST["username"];
 	$password = $_POST["password"];
@@ -32,13 +36,40 @@
 		}
 
 		//Reg exp check
-		else if ((!preg_match("/\w+/", $username)) || (!preg_match("/\w+/", $name))||
-		(!preg_match("/^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&])[\w!@#$%^&]{8,}$/",$password)) || 
-		(!preg_match("/^[\w.-]+@[\w-]+(\.[\w-]+)*$/", $email ))) 
+		else if (!preg_match("/\w+/", $username))  
 		{
 			?>
             <div class="title">
-            Invalid pattern matching for username : <?php echo htmlentities($username);?>!
+            Invalid pattern matching for username input <?php echo htmlentities($username);?>
+             </div>
+            <?php
+		}
+
+		else if (!preg_match("/\w+/", $name)) 
+		{
+			?>
+            <div class="title">
+            Invalid pattern matching for name input <?php echo htmlentities($username);?>!
+             </div>
+            <?php
+		}
+
+		else if(!preg_match('/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/',$password))
+		{
+			
+			?>
+            <div class="title">
+            Invalid pattern matching for password input <?php echo htmlentities($username);?>!
+             </div>
+            <?php
+
+		}
+
+		else if(!preg_match('/^[^\s@]+@[^\s@]+\.[^\s@]+$/', $email ))
+		{
+			?>
+            <div class="title">
+            Invalid pattern matching for email input <?php echo htmlentities($username);?>!
              </div>
             <?php
 		}
@@ -48,6 +79,7 @@
             ?>
             <div class="title">
             Registration successfull!! <?php echo htmlentities($username);?>!
+            <p class="register"> <a href="form.php">Sign in</a></p>
              </div>
             <?php
 		}
@@ -97,6 +129,7 @@
 		return FALSE;
 	}
 ?>
+</form>
 </div>
    </body>
-</html>s
+</html>

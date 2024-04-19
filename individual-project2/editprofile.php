@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="headingsContainer">
-            <h3>Passsword Status</h3>
+            <h3>Edit Profile</h3>
         </div>
 	<form>
 <?php
@@ -70,7 +70,7 @@
 			exit();
 		}
 
-		$sql = "UPDATE users SET name=str(?), email=? WHERE username=?;";
+		$sql = "UPDATE users SET name=?, email=? WHERE username=?;";
 		$stmt=$mysqli->prepare($sql);
 		$stmt->bind_param("sss",$name,$email,$username);
 		if($stmt->execute())

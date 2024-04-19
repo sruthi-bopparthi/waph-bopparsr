@@ -1,9 +1,9 @@
 body 
 {
   font-family:sans-serif; 
-  background: -webkit-linear-gradient(to right, #155799, #159957);  
-  background: linear-gradient(to right, #155799, #159957); 
-  color:whitesmoke;
+  background: -webkit-linear-gradient(to right, yellow, white);  
+  background: linear-gradient(to right, yellow, white); 
+  color:black;
 }
 
 
@@ -16,7 +16,7 @@ form{
     width:35rem;
     margin: auto;
     color:whitesmoke;
-    backdrop-filter: blur(16px) saturate(180%);
+    background: white;
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(11, 15, 13, 0.582);
     border-radius: 12px;
