@@ -15,34 +15,37 @@
 <?php
 	require "session_auth.php";
 	$username = $_SESSION['username'];
-	$password = $_REQUEST["newpassword"];
+	$name = $_REQUEST["newname"];
+   $email = $_REQUEST["newemail"];
 	$token=$_POST["nocsrftoken"];
 	if(!isset($token) or ($token!==$_SESSION["nocsrftoken"]))
 	{
-		echo "CSRF Attack is detected";
+		?>
+            <div class="mainContainer">
+            <h2>CSRF Attack is detected!!! for <?php echo htmlentities($username);?>!</h2>
+             </div>
+            <?php
 		die();
 	}
-	if(isset($username) and isset($password))
+	if(isset($username) and isset($name) and isset($email))
 	{
 		
-		if(changepassword($username,$password))
+		if(changeprofile($username,$name,$email))
 		{
             ?>
             <div class="mainContainer">
-            <h2>Password has been changed!!! for <?php echo htmlentities($username);?>!</h2>
-
-			<p class="register"> <a href="logout.php">Logout</a></p>
+            Profile has been updated!!! for <?php echo htmlentities($username);?>!
              </div>
+             <p class="register"> <a href="logout.php">Logout</a></p>
             <?php
 		}
 		else
 		{
 			?>
             <div class="mainContainer">
-            <h2>Change password failed!!!! for <?php echo htmlentities($username);?>!</h2>
-            
-	<p class="register"> <a href="logout.php">Logout</a></p>
+            Profile Update failed!!!! for <?php echo htmlentities($username);?>!
              </div>
+             <p class="register"> <a href="logout.php">Logout</a></p>
             <?php
 		}
 	}
@@ -50,14 +53,15 @@
 	{
 		?>
             <div class="mainContainer">
-            <?php echo "No username/password provided!";?>!
+            <?php echo "No name/email provided!";?>!
              </div>
+             <p class="register"> <a href="logout.php">Logout</a></p>
             <?php
 		
 	}
 	
 
-	function changepassword($username,$password)
+	function changeprofile($username,$name, $email)
 	{
 		$mysqli = new mysqli('localhost','bopparsr','Shruti@123','waph');
 		if($mysqli->connect_errno)
@@ -66,9 +70,9 @@
 			exit();
 		}
 
-		$sql = "UPDATE users SET password=md5(?) WHERE username=?;";
+		$sql = "UPDATE users SET name=str(?), email=? WHERE username=?;";
 		$stmt=$mysqli->prepare($sql);
-		$stmt->bind_param("ss",$password,$username);
+		$stmt->bind_param("sss",$name,$email,$username);
 		if($stmt->execute())
 			return TRUE;
 		return FALSE;
@@ -76,6 +80,7 @@
 
 	$token.die();
 	?>
+	
 	</form>
     </div>
    </body>

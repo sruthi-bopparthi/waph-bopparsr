@@ -113,7 +113,7 @@
          
          function isValidPassword(password) {
              // Password must have at least 8 characters with at least one uppercase letter, one lowercase letter, one number, and one special character
-             var passwordRegex = new RegExp(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/);
+             var passwordRegex = new RegExp('^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&])[a-zA-Z0-9!@#$%^&]{8,}$');
              console.log(password);
              console.log(passwordRegex);
              console.log(passwordRegex.test(password));

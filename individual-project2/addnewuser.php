@@ -24,18 +24,26 @@
 		#input length check
 		if(strlen($username) < 1 || strlen($password) < 8 || strlen($email)< 3 || strlen($name)<1)
 		{
-			die(header("Location: error_page.php?error=InvalidLength"));
+			?>
+            <div class="title">
+            Invalid Length for username : <?php echo htmlentities($username);?>!
+             </div>
+            <?php
 		}
 
 		//Reg exp check
-		if ((!preg_match("/\w+/", $username)) || (!preg_match("/\w+/", $name))||
-		(!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&])[\w!@#$%^&]{8,}$/",$password)) || 
+		else if ((!preg_match("/\w+/", $username)) || (!preg_match("/\w+/", $name))||
+		(!preg_match("/^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&])[\w!@#$%^&]{8,}$/",$password)) || 
 		(!preg_match("/^[\w.-]+@[\w-]+(\.[\w-]+)*$/", $email ))) 
 		{
-			die(header("Location: error_page.php?error=InvalidCharsInUsername"));
+			?>
+            <div class="title">
+            Invalid pattern matching for username : <?php echo htmlentities($username);?>!
+             </div>
+            <?php
 		}
 
-		if(addnewuser($name, $email,$username,$password))
+		else if(addnewuser($name, $email,$username,$password))
 		{
             ?>
             <div class="title">
@@ -91,4 +99,4 @@
 ?>
 </div>
    </body>
-</html>
+</html>s

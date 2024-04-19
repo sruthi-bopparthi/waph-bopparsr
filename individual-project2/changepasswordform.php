@@ -4,36 +4,29 @@
 	$_SESSION["nocsrftoken"]=$rand;
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>WAPH - Change password  </title>
-      <link rel="stylesheet" href="design.css">
-   </head>
-   <body>
-      <div class="wrapper">
-         <div class="title">
-            Change Password Form, WAPH
-         </div>
-         <p>Sruthi Sridhar Bopparthi</p>
-         <p>
-            <?php
-		         echo "Visited time: ".date("Y-m-d h:i:sa")
-	         ?></p>
-         <form action="changepassword.php" method="POST" class="form login">
-            <div class="field">
-               <label>Username : </label> <?php echo htmlentities($_SESSION['username']);?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Change Password Form</title>
+</head>
+<body>
+    <h1>Change Password Form, WAPH</h1>
+         <form action="changepassword.php" method="POST">
+            <div class="mainContainer">
+               <label for="username">Username : </label> <?php echo htmlentities($_SESSION['username']);?>
                <input type="hidden" name="nocsrftoken" value="<?php echo $rand; ?>"/>
-            </div>
-            <div class="field">
+               <br><br>
+
+               <label for="password">Password : </label>
                 <input type="password" name="newpassword" required>
-                <label>New Password</label>
-             </div>
-             <div class="field">
-                <input type="submit" value="Change Password">
-             </div>
+             
+                
+                <button type="submit">Change Password</button>
+               </div>
          </form>
         </div>
     </body>
 </html>
-

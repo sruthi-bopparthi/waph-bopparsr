@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>User Page </title>
-      <link rel="stylesheet" href="design.css">
-   </head>
-   <body>
-   <div class="wrapper">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>User Details</title>
+</head>
+<body>
+<div class="headingsContainer">
+            <h3>User Details</h3>
+        </div>
+	<form>
 <?php
 	session_set_cookie_params(15*60,"/","bopparsr.waph.io",TRUE,TRUE);
 	session_start();
@@ -16,12 +21,12 @@
 		{
 			$_SESSION["authenticated"] = TRUE;
 			$_SESSION["username"] = $_POST["username"];
+			$_SESSION["name"] = $_POST["name"];
 			$_SESSION["browser"] = $_SERVER["HTTPS_USER_AGENT"];
 			?>
-			<div class="title">
-        	Welcome <?php echo htmlentities($_SESSION["username"]);?>!
+			<div class="mainContainer">
+        	<h3>Welcome <?php echo htmlentities($_SESSION["username"]);?>!</h3>
          	</div>
-			<h3><u> User Profile Page </u></h3>
 			<?php
 			$mysqli = new mysqli('localhost','bopparsr','Shruti@123','waph');
 			if($mysqli->connect_errno)
@@ -40,14 +45,13 @@
 				{
 					?>
 					<div>
-						<p> Name: <?php echo $row['name'];?></p>
-						<p> Email: <?php echo $row['email'];?></p>
-						<p> Username: <?php echo $row['username'];?></p>
+						<p> <label> Name: </label><?php echo $row['name'];?></p>
+						<p> <label> Email: </label><?php echo $row['email'];?></p>
+						<p> <label> Username: </label><?php echo $row['username'];?></p>
 					</div>
-
-            <div class="signup-link">
-               <a href="changepasswordform.php">Change Password</a> | <a href="changenameform.php">Change Name</a> | <a href="changeemailform.php">Change Email</a> | <a href="logout.php">Logout</a>
-            </div>
+					<p class="register"><a href="changepasswordform.php">Change Password</a> </p>
+					<p class="register"><a href="editprofileform.php">Edit Profile</a></p> 
+					<p class="register"> <a href="logout.php">Logout</a></p>
 	
 					<?php
 				}
@@ -101,7 +105,7 @@
 
 	
 ?>
-
+	</form>
     </div>
    </body>
 </html>
